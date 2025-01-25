@@ -1776,6 +1776,7 @@ input, select, textarea {
 
 	header.major {
 		margin: 0 0 3.5em 0;
+		text-align: center;
 	}
 
 		header.major h2, header.major h3, header.major h4, header.major h5, header.major h6 {
@@ -2302,32 +2303,42 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		font-size: 2em;
 	}
 
 		ul.icons li {
 			display: inline-block;
-			padding: 0 1em 0 0;
+			padding: 0 2em 0 0;
 		}
 
 			ul.icons li:last-child {
 				padding-right: 0 !important;
 			}
 
-		ul.icons.major {
-			padding: 1em 0;
-		}
-
-			ul.icons.major li {
-				padding-right: 3.5em;
+			ul.icons.major {
+				display: flex; /* 将图标水平排列 */
+				flex-wrap: wrap; /* 如果图标过多，自动换行 */
+				justify-content: center; /* 居中对齐 */
+				gap: 20px; /* 设置图标之间的间距 */
+				padding: 20px; /* 上下左右的内边距 */
+				list-style: none; /* 去掉列表样式 */
 			}
-
-				@media screen and (max-width: 736px) {
-
-					ul.icons.major li {
-						padding: 0 1em !important;
-					}
-
-				}
+			
+			ul.icons.major li {
+				display: flex; /* 让图标内容居中 */
+				align-items: center;
+				justify-content: center;
+			}
+			
+			ul.icons.major img {
+				width: auto;
+				height: 36px; /* 保持比例缩放 */
+				transition: transform 0.2s ease; /* 添加动画效果 */
+			}
+			
+			ul.icons.major img:hover {
+				transform: scale(1.2); /* 悬停时放大图标 */
+			}
 
 /* Table */
 
